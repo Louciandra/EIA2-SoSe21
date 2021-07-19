@@ -71,6 +71,7 @@ namespace abschlussarbeit {
         optCtx.fillText("sehr langsam", optionCanvas.width / 2, 15);
         optCtx.fillText("sehr schnell", optionCanvas.width / 2, optionCanvas.height - 5);
 
+        // die nächsten beiden for-Loops basieren auf https://stackoverflow.com/questions/5026961/html5-canvas-ctx-filltext-wont-do-line-breaks
         let textArr: string[] = "sehr genau".split("");
         let y: number = 80;
         for (let char of textArr) {
@@ -191,6 +192,7 @@ namespace abschlussarbeit {
     }
 
     function klickMouse(_e: MouseEvent): void {
+        // Der Code um x und y zu finden kommt teilweise durch https://stackoverflow.com/questions/46528123/how-to-get-bounding-box-coordinates-for-canvas-content
         let rect: DOMRect = spielwiese.getBoundingClientRect();
         let conv: number = 2100 / rect.width;
         var x: number = (_e.pageX - rect.left) * conv;
@@ -229,6 +231,7 @@ namespace abschlussarbeit {
         }
     }
 
+    
     export function resetPlayers(): void {
         let zw1: number[] = [];
         let zw2: number[] = [];
