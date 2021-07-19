@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Abschlussarbeit Leandra Philipp</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='css/style.css'>
+    <script src="js/utils.js"></script>
+    <script src="js/classes/ball.js" defer></script>
+    <script src="js/classes/human.js" defer></script>
+    <script src="js/classes/player.js" defer></script>
+    <script src="js/classes/referee.js" defer></script>
+    <script src='js/script.js' defer></script>
+</head>
+<body>
+    <h1>Fußball-Simulation</h1>
+    <div id="pregame">
+        <canvas id="rangecanvas" width="300" height="300"></canvas>
+        <form id="pregameOptionsForm">
+            <div>
+                <label for="speedMinRange">Geschwindigkeit - von </label>
+                <input type="range" name="speedMinRange" id="speedMinRange" min="1" max="5" value="2" step="0.1">
+            </div>
+            <div>
+                <label for="speedMaxRange">Geschwindigkeit - bis </label>
+                <input type="range" name="speedMaxRange" id="speedMaxRange" min="1" max="5" value="4" step="0.1">
+            </div>
+            <div>
+                <label for="uncMinRange">Ungenauigkeit - von </label>
+                <input type="range" name="uncMinRange" id="uncMinRange" min="1" max="15" value="2" step="0.1">
+            </div>
+            <div>
+                <label for="uncMaxRange">Ungenauigkeit - bis </label>
+                <input type="range" name="uncMaxRange" id="uncMaxRange" min="1" max="15" value="14" step="0.1">
+            </div>
+            <div>
+                <label for="team1Col">Team 1 Farbe: </label>
+                <input type="color" name="team1Col" id="team1Col" value="#ff0000">
+            </div>
+            <div>
+                <label for="team2Col">Team 2 Farbe: </label>
+                <input type="color" name="team2Col" id="team2Col" value="#00ff00">
+            </div>
+        </form>
+        <div id="buttons">
+            <button id="startGame">START NEW GAME</button>
+        </div>
+    </div>
+    <div id="gamearea">
+        <div id="spielfeld">
+            <div id="score">
+                <p id="scoreP">Test Score</p>
+            </div>
+            <div id="feldDiv">
+                <img src="assets/feld.png" id="feldImg">
+                <canvas id="spielwiese" width="2100" height="1360"></canvas>
+            </div>
+        </div>
+        <div id="info">
+            <div id="spieler">
+                <h2>Auswechselbank</h2>
+            </div>
+            <div id="werte">
+                <h2>Aktueller Spieler</h2>
+                <div id="spielerInfo">
+                    <p>Spielernummer: <span id="spielerNummerSpan"></span></p>
+                    <p>Geschwindigkeit: <span id="spielerSprintSpan"></span>m/s</p>
+                    <p>Ungenauigkeit: <span id="spielerUncSpan"></span>°</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
